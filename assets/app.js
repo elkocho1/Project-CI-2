@@ -16,8 +16,19 @@ const scoreContainer = document.querySelector(".score-container");
 
 //function to handle choice button click event
 //Remove open-overlay class 
-modalOne.classList.remove("open-overlay");
+//modalOne.classList.remove("open-overlay");
 //Display the score container
-scoreContainer.computedStyleMap.display = "block";
+//scoreContainer.style.display = "block";
 // Add event listener to each choice button
 // For Loop with click event listener 
+function handleChoiceButtonClick() {
+    modalOne.classList.remove("open-overlay");
+    scoreContainer.style.display = "block";
+}
+
+for (var i = 0; i < choiceButtons.length; i++) {
+    choiceButtons[i].addEventListener("click", function () {
+        //call the function
+        handleChoiceButtonClick();
+    });
+}
