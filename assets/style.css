@@ -49,7 +49,7 @@ button:hover {
     z-index: -10;
 }
 
-/*Open/ Close Modal*/
+/*Open / Close Modal*/
 .open-overlay {
     visibility: visible;
     z-index: 10;
