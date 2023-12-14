@@ -84,3 +84,16 @@ button:hover {
     display: none;
     /*hidden by default*/
 }
+
+/*Winner and Final Container*/
+.final-container {
+    text-align: center;
+    padding: 20px;
+    display: none;
+    /*hidden by default*/
+}
+
+/*Replay button*/
+button.replay {
+    background-color: green;
+}
