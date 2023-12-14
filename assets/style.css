@@ -54,3 +54,24 @@ button:hover {
     visibility: visible;
     z-index: 10;
 }
+
+/*Modal Container*/
+
+.modal-container {
+    background-color: #f4f4f4;
+    width: 80%;
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-container h2 {
+    color: blue;
+}
+
+/*Button Choices*/
+.btn-choices button {
+    background-color: green;
+    min-width: 80%;
+}
