@@ -20,6 +20,11 @@ const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
 const userChoiceSpan = document.getElementById("user-choice");
 const computerChoiceSpan = document.getElementById("computer-choice");
 
+//test logs
+//console.log("Choices array:", choices);
+//console.log("User Choice Span:", userChoiceSpan);
+//console.log("Computer Choice Span:", computerChoiceSpan);
+
 
 //function to handle choice button click event
 //Remove open-overlay class 
