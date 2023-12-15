@@ -35,6 +35,7 @@ function generateComputerChoice() {
 // If statements what hand beats the 2 hands
 //2 PLayers userChoice and ComputerChoices
 
+
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
         return "tie";
@@ -42,7 +43,7 @@ function determineWinner(userChoice, computerChoices) {
     }
     if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
         return "user";
-        console.log("User");
+
     } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
         return "user";
         console.log("User");
@@ -84,6 +85,10 @@ function handleChoiceButtonClick(event) {
     //console.log("computerChoices");
     //display in score container
     computerChoiceSpan.innerText = computerChoices;
+
+    // call the determin winner function
+    const winner = determineWinner(userChoice, computerChoices);
+    console.log("winner of the round:", winner);
 
     //Remove "open-overlay" class to hide the pop up
     modalOne.classList.remove("open-overlay");
