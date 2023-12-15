@@ -14,14 +14,26 @@ const winnerSpan = document.getElementById("winner");
 const userScoreSpan = document.getElementById("score-user");
 const computerScoreSpan = document.getElementById("score-computer");
 
+const roundSpan = document.getElementById("rounds-container");
+const nextBtn = document.getElementById("next-round");
+
 let userScore = 0;
 let computerScore = 0;
 
+let roundNumber = 0;
+const roundMax = 3;
+
 startBtn.addEventListener("click", function () {
+    nextBtn.style.display = "block";
+    startBtn.style.display = "none";
+    displayGamePopUp();
+    updateRound();
+});
+nextBtn.addEventListener("click", function () {
     //   modalOne.classList.add("open-overlay");
     displayGamePopUp();
+    updateRound();
 });
-
 
 //test logs
 //console.log("Choices array:", choices);
@@ -80,6 +92,12 @@ function updateScores(winner) {
 
 }
 
+//function to update round
+function updateRound() {
+    roundNumber++;
+    roundSpan.innerText = roundNumber;
+}
+
 const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
     for (var i = 0; i < choiceButtons.length; i++) {
@@ -129,6 +147,12 @@ function handleChoiceButtonClick(event) {
 
     //display score and call the function;
     updateScores(winner);
+
+    if (roundNumber === roundMax) {
+        nextBtn.style.display = "none";
+        startBtn.style.display = "block";
+    }
+
 
     //display values with innerText
 
