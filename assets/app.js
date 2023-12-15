@@ -25,7 +25,11 @@ const computerChoiceSpan = document.getElementById("computer-choice");
 //console.log("User Choice Span:", userChoiceSpan);
 //console.log("Computer Choice Span:", computerChoiceSpan);
 
-
+//Function to generate a random number for the computer´s choice
+function generateComputerChoice() {
+    return Math.floor(Math.random() * choices.length);
+}
+//test the function console.log(generateComputerChoice());
 //function to handle choice button click event
 //Remove open-overlay class 
 //modalOne.classList.remove("open-overlay");
@@ -34,6 +38,8 @@ const computerChoiceSpan = document.getElementById("computer-choice");
 // Add event listener to each choice button
 // For Loop with click event listener 
 function handleChoiceButtonClick() {
+
+
     //Remove "open-overlay" class to hide the pop up
     modalOne.classList.remove("open-overlay");
     //Display the score button
