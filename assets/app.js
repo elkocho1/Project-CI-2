@@ -35,6 +35,8 @@ function generateComputerChoice() {
 // If statements what hand beats the 2 hands
 //2 PLayers userChoice and ComputerChoices
 
+// select winner span id element
+const winnerSpan = document.getElementById("winner");
 
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
@@ -89,6 +91,8 @@ function handleChoiceButtonClick(event) {
     // call the determin winner function
     const winner = determineWinner(userChoice, computerChoices);
     console.log("winner of the round:", winner);
+    //display winner in span element
+    winnerSpan.innerText = winner;
 
     //Remove "open-overlay" class to hide the pop up
     modalOne.classList.remove("open-overlay");
