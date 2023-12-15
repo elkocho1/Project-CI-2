@@ -30,6 +30,7 @@ function generateComputerChoice() {
     return Math.floor(Math.random() * choices.length);
 }
 //test the function console.log(generateComputerChoice());
+
 //function to handle choice button click event
 //Remove open-overlay class 
 //modalOne.classList.remove("open-overlay");
@@ -39,6 +40,12 @@ function generateComputerChoice() {
 // For Loop with click event listener 
 function handleChoiceButtonClick() {
 
+    //get computer´s choice by random number 
+    const randomNumber = generateComputerChoice();
+    const computerChoices = choices[randomNumber];
+    //console.log("computerChoices");
+    //display in score container
+    computerChoiceSpan.innerText = computerChoices;
 
     //Remove "open-overlay" class to hide the pop up
     modalOne.classList.remove("open-overlay");
