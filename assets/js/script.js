@@ -82,6 +82,9 @@ function updateScores(winner) {
     } else if (winner === "Computer wins!") {
         computerScore++;
     }
+    //display user score & computer score
+    userScoreSpan.innerText = userScore;
+    computerScoreSpan.innerText = computerScore;
 
 }
 
@@ -116,8 +119,8 @@ function handleChoiceButtonClick(event) {
     //display winner in span element
     winnerSpan.innerText = winner;
 
-    //display user score & computer score
-
+    //display score and call the function;
+    updateScores(winner);
 
     //display values with innerText
 

@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Keywords Description & Author-->
+    <!--Style-->
+    <link rel="stylesheet" href="assets/css/style.css">
     <!--Title-->
     <title>Project JS - Rock, Paper, Scissors, Lizard, Spock Game</title>
-    <!--Style-->
-    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
@@ -21,7 +23,7 @@
     </header>
 
     <!-- Pop Up / Modal -->
-    <div class="modal-overlay ">
+    <aside class="modal-overlay ">
         <div class="modal-container">
             <div class="introduction">
                 <h2>Introduction</h2>
@@ -36,11 +38,11 @@
                 <button id="spock">Spock</button>
             </div>
         </div>
-    </div>
+    </aside>
 
     <!--Score Container-->
 
-    <div class="score-container">
+    <main class="score-container">
         <h2>I hope you won the round!</h2>
         <div class="rounds">
             <h4>Rounds: <span id="rounds">1</span></h4>
@@ -61,11 +63,11 @@
             <h4>Who won the round: <span id="winner">Computer</span></h4>
         </div>
         <button id="next-round">Next</button>
-    </div>
+    </main>
 
     <!--Winner/Final Container-->
 
-    <div class="final-container">
+    <aside class="final-container">
         <h2>Thank you for playing my game. I hope you had fun!</h2>
         <p>Here you can find the scores and who won the game!</p>
         <div class="results">
@@ -76,10 +78,10 @@
                     id="total-scores-user">1</span> User</h4>
         </div>
         <button id="replay">You want play again?</button>
-    </div>
+    </aside>
 
     <!--JavaScript-->
-    <script src="assets/app.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
