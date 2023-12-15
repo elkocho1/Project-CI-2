@@ -38,19 +38,26 @@ function generateComputerChoice() {
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
         return "tie";
+        console.log("tie");
     }
     if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
         return "user";
+        console.log("User");
     } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
         return "user";
+        console.log("User");
     } else if (userChoice === 'Scissors' && (computerChoices === 'Paper' || computerChoices === 'Lizard')) {
         return "user";
+        console.log("User");
     } else if (userChoice === 'Lizard' && (computerChoices === 'Spock' || computerChoices === 'Paper')) {
         return "user";
+        console.log("User");
     } else if (userChoice === 'Spock' && (computerChoices === 'Scissors' || computerChoices === 'Rock')) {
         return "user";
-    } else
-        return "computer";
+        console.log("User");
+    }
+    return "computer";
+    console.log("Computer");
 
 }
 
