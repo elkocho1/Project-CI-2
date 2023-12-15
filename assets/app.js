@@ -67,11 +67,20 @@ function determineWinner(userChoice, computerChoices) {
 
 
 //select the score od for the computer and user to display the result
-//set the inital value to 0
+
 const userScoreSpan = document.getElementById("score-user");
 const computerScoreSpan = document.getElementById("score-computer");
-//function to update scores
 
+//set the inital value to 0
+let userScore = 0;
+let computerScore = 0;
+
+//function to update scores
+function updateScores(winner) {
+    if (winner === "user") {
+
+    }
+}
 
 //function to handle choice button click event
 //Remove open-overlay class 
@@ -101,6 +110,11 @@ function handleChoiceButtonClick(event) {
     // console.log("winner of the round:", winner);
     //display winner in span element
     winnerSpan.innerText = winner;
+
+    //user score & computer score
+
+
+    //display values with innerText
 
     //Remove "open-overlay" class to hide the pop up
     modalOne.classList.remove("open-overlay");
