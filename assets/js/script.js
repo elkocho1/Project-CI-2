@@ -3,22 +3,24 @@
 
 const startBtn = document.querySelector(".start-btn");
 const modalOne = document.querySelector(".modal-overlay");
+const choiceButtons = document.querySelectorAll(".btn-choices button");
+const scoreContainer = document.querySelector(".score-container");
+
+const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
+const userChoiceSpan = document.getElementById("user-choice");
+const computerChoiceSpan = document.getElementById("computer-choice");
+const winnerSpan = document.getElementById("winner");
+
+const userScoreSpan = document.getElementById("score-user");
+const computerScoreSpan = document.getElementById("score-computer");
+
+let userScore = 0;
+let computerScore = 0;
 
 startBtn.addEventListener("click", function () {
     modalOne.classList.add("open-overlay");
 });
 
-// select the button choices and score container
-// when one button is click the pop up closes and the score container is displayed
-
-const choiceButtons = document.querySelectorAll(".btn-choices button");
-const scoreContainer = document.querySelector(".score-container");
-// create a variable with the array, 
-// get the Id´s user-choice and computer-choice to display each
-// Get the innerText of the Choice Button
-const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
-const userChoiceSpan = document.getElementById("user-choice");
-const computerChoiceSpan = document.getElementById("computer-choice");
 
 //test logs
 //console.log("Choices array:", choices);
@@ -35,8 +37,6 @@ function generateComputerChoice() {
 // If statements what hand beats the 2 hands
 //2 PLayers userChoice and ComputerChoices
 
-// select winner span id element
-const winnerSpan = document.getElementById("winner");
 
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
@@ -66,15 +66,6 @@ function determineWinner(userChoice, computerChoices) {
 
 
 
-//select the score od for the computer and user to display the result
-
-const userScoreSpan = document.getElementById("score-user");
-const computerScoreSpan = document.getElementById("score-computer");
-
-//set the inital value to 0
-let userScore = 0;
-let computerScore = 0;
-
 //function to update scores
 function updateScores(winner) {
     if (winner === "User wins!") {
@@ -90,13 +81,17 @@ function updateScores(winner) {
 
 
 
-//function to handle choice button click event
-//Remove open-overlay class 
-//modalOne.classList.remove("open-overlay");
-//Display the score container
-//scoreContainer.style.display = "block";
-// Add event listener to each choice button
-// For Loop with click event listener 
+
+/**
+ * function to handle choice button click event
+ * Remove open-overlay class 
+ * modalOne.classList.remove("open-overlay");
+ * Display the score container
+ * scoreContainer.style.display = "block";
+ * Add event listener to each choice button
+ * For Loop with click event listener 
+ */
+
 function handleChoiceButtonClick(event) {
 
     //get the innerText of the clicked users choice
