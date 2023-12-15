@@ -38,14 +38,15 @@ function generateComputerChoice() {
 //scoreContainer.style.display = "block";
 // Add event listener to each choice button
 // For Loop with click event listener 
-function handleChoiceButtonClick() {
+function handleChoiceButtonClick(event) {
 
     //get the innerText of the clicked users choice
     //add event paramenter to main function and loop 
     //create variable userChoice and add the event.target.innerText
-
+    const userChoice = event.target.innerText;
+    //console.log("userChoice");
     //display the new variable 
-
+    userChoiceSpan.innerText = userChoice;
     //get computer´s choice by random number 
     const randomNumber = generateComputerChoice();
     const computerChoices = choices[randomNumber];
@@ -60,8 +61,8 @@ function handleChoiceButtonClick() {
 }
 
 for (var i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].addEventListener("click", function () {
+    choiceButtons[i].addEventListener("click", function (event) {
         //call the function when any choice button is clicked
-        handleChoiceButtonClick();
+        handleChoiceButtonClick(event);
     });
 }
