@@ -41,26 +41,26 @@ const winnerSpan = document.getElementById("winner");
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
         return "tie";
-        console.log("tie");
+        //  console.log("tie");
     }
     if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
         return "user";
 
     } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
         return "user";
-        console.log("User");
+        //  console.log("User");
     } else if (userChoice === 'Scissors' && (computerChoices === 'Paper' || computerChoices === 'Lizard')) {
         return "user";
-        console.log("User");
+        //   console.log("User");
     } else if (userChoice === 'Lizard' && (computerChoices === 'Spock' || computerChoices === 'Paper')) {
         return "user";
-        console.log("User");
+        // console.log("User");
     } else if (userChoice === 'Spock' && (computerChoices === 'Scissors' || computerChoices === 'Rock')) {
         return "user";
-        console.log("User");
+        // console.log("User");
     }
     return "computer";
-    console.log("Computer");
+    // console.log("Computer");
 
 }
 
@@ -90,7 +90,7 @@ function handleChoiceButtonClick(event) {
 
     // call the determin winner function
     const winner = determineWinner(userChoice, computerChoices);
-    console.log("winner of the round:", winner);
+    // console.log("winner of the round:", winner);
     //display winner in span element
     winnerSpan.innerText = winner;
 
