@@ -31,6 +31,30 @@ function generateComputerChoice() {
 }
 //test the function console.log(generateComputerChoice());
 
+// Funtion Game Rules to determin the winner
+// If statements what hand beats the 2 hands
+//2 PLayers userChoice and ComputerChoices
+
+function determineWinner(userChoice, computerChoices) {
+    if (userChoice === computerChoices) {
+        return "tie";
+    }
+    if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
+        return "user";
+    } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
+        return "user";
+    } else if (userChoice === 'Scissors' && (computerChoices === 'Paper' || computerChoices === 'Lizard')) {
+        return "user";
+    } else if (userChoice === 'Lizard' && (computerChoices === 'Spock' || computerChoices === 'Paper')) {
+        return "user";
+    } else if (userChoice === 'Spock' && (computerChoices === 'Scissors' || computerChoices === 'Rock')) {
+        return "user";
+    } else
+        return "computer";
+
+}
+
+
 //function to handle choice button click event
 //Remove open-overlay class 
 //modalOne.classList.remove("open-overlay");
