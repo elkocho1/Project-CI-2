@@ -65,6 +65,14 @@ function determineWinner(userChoice, computerChoices) {
 }
 
 
+
+//select the score od for the computer and user to display the result
+//set the inital value to 0
+const userScoreSpan = document.getElementById("score-user");
+const computerScoreSpan = document.getElementById("score-computer");
+//function to update scores
+
+
 //function to handle choice button click event
 //Remove open-overlay class 
 //modalOne.classList.remove("open-overlay");
