@@ -40,6 +40,12 @@ function generateComputerChoice() {
 // For Loop with click event listener 
 function handleChoiceButtonClick() {
 
+    //get the innerText of the clicked users choice
+    //add event paramenter to main function and loop 
+    //create variable userChoice and add the event.target.innerText
+
+    //display the new variable 
+
     //get computer´s choice by random number 
     const randomNumber = generateComputerChoice();
     const computerChoices = choices[randomNumber];
