@@ -18,7 +18,8 @@ let userScore = 0;
 let computerScore = 0;
 
 startBtn.addEventListener("click", function () {
-    modalOne.classList.add("open-overlay");
+    //   modalOne.classList.add("open-overlay");
+    displayGamePopUp();
 });
 
 
@@ -79,6 +80,18 @@ function updateScores(winner) {
 
 }
 
+const displayGamePopUp = function () {
+    modalOne.classList.add("open-overlay");
+    for (var i = 0; i < choiceButtons.length; i++) {
+        choiceButtons[i].addEventListener("click", function (event) {
+            //call the function when any choice button is clicked
+            handleChoiceButtonClick(event);
+        });
+    }
+
+}
+
+
 
 
 
@@ -123,11 +136,4 @@ function handleChoiceButtonClick(event) {
     modalOne.classList.remove("open-overlay");
     //Display the score button
     scoreContainer.style.display = "block";
-}
-
-for (var i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].addEventListener("click", function (event) {
-        //call the function when any choice button is clicked
-        handleChoiceButtonClick(event);
-    });
 }
