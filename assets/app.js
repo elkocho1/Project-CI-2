@@ -77,10 +77,15 @@ let computerScore = 0;
 
 //function to update scores
 function updateScores(winner) {
-    if (winner === "user") {
-
+    if (winner === "User wins!") {
+        userScore++;
+    } else if (winner === "Computer wins!") {
+        computerScore++;
     }
+
 }
+
+
 
 //function to handle choice button click event
 //Remove open-overlay class 
@@ -111,7 +116,7 @@ function handleChoiceButtonClick(event) {
     //display winner in span element
     winnerSpan.innerText = winner;
 
-    //user score & computer score
+    //display user score & computer score
 
 
     //display values with innerText
