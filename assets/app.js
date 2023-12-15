@@ -40,26 +40,26 @@ const winnerSpan = document.getElementById("winner");
 
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
-        return "tie";
+        return "It´s a tie!";
         //  console.log("tie");
     }
     if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
-        return "user";
+        return "User wins!";
 
     } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
-        return "user";
+        return "User wins!";
         //  console.log("User");
     } else if (userChoice === 'Scissors' && (computerChoices === 'Paper' || computerChoices === 'Lizard')) {
-        return "user";
+        return "User wins!";
         //   console.log("User");
     } else if (userChoice === 'Lizard' && (computerChoices === 'Spock' || computerChoices === 'Paper')) {
-        return "user";
+        return "User wins!";
         // console.log("User");
     } else if (userChoice === 'Spock' && (computerChoices === 'Scissors' || computerChoices === 'Rock')) {
-        return "user";
+        return "User wins!";
         // console.log("User");
     }
-    return "computer";
+    return "Computer wins!";
     // console.log("Computer");
 
 }
