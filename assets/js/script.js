@@ -190,5 +190,8 @@ function handleChoiceButtonClick(event) {
     //Remove "open-overlay" class to hide the pop up
     modalOne.classList.remove("open-overlay");
     //Display the score button
-    scoreContainer.style.display = "block";
+    if (roundNumber < roundMax) {
+        scoreContainer.style.display = "block";
+    }
+
 }
