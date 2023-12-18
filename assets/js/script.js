@@ -98,15 +98,17 @@ function updateRound() {
     roundSpan.innerText = roundNumber;
 }
 
+
+for (var i = 0; i < choiceButtons.length; i++) {
+    choiceButtons[i].addEventListener("click", function (event) {
+        //call the function when any choice button is clicked
+        handleChoiceButtonClick(event);
+    });
+}
+
+
 const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
-    for (var i = 0; i < choiceButtons.length; i++) {
-        choiceButtons[i].addEventListener("click", function (event) {
-            //call the function when any choice button is clicked
-            handleChoiceButtonClick(event);
-        });
-    }
-
 }
 
 
