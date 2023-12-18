@@ -120,8 +120,20 @@ const displayGamePopUp = function () {
 //Determin the overall winner and update the result 
 function handleEndOfGame() {
     if (userScore > computerScore) {
+        resultSpan.innerText = "User Win!";
+    } else if (computerScore > userScore) {
+        resultSpan.innerText = "Computer Win!"
+    } else(
+        resultSpan.innerText = "It's a Tie! "
+    )
 
-    }
+    //Update the total scores
+    totalScoresUserSpan.innerText = userScore;
+    totalScoresComputerSpan.innerText = computerScore;
+
+    //hide score ontainer and show final container
+    scoreContainer.style.display = "none";
+    finalContainer.style.display = "block";
 }
 
 
@@ -165,6 +177,9 @@ function handleChoiceButtonClick(event) {
     if (roundNumber === roundMax) {
         nextBtn.style.display = "none";
         startBtn.style.display = "block";
+
+        //call the handleEndOfGame function under this condition
+        handleEndOfGame();
     }
 
 
