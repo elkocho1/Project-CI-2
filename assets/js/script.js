@@ -33,6 +33,7 @@ startBtn.addEventListener("click", function () {
     startBtn.style.display = "none";
     displayGamePopUp();
     updateRound();
+    replayGame();
 });
 nextBtn.addEventListener("click", function () {
     //   modalOne.classList.add("open-overlay");
@@ -139,6 +140,20 @@ function handleEndOfGame() {
 }
 
 
+function replayGame() {
+    if (roundNumber === roundMax) {
+        userScore = 0;
+        computerScore = 0;
+        roundNumber = 0;
+    }
+    userScoreSpan.innerText = userScore;
+    computerScoreSpan.innerText = computerScore;
+    roundSpan.innerText = roundNumber;
+
+    finalContainer.style.display = "none";
+    scoreContainer.style.display = "none";
+}
+
 
 
 /**
@@ -182,16 +197,11 @@ function handleChoiceButtonClick(event) {
 
         //call the handleEndOfGame function under this condition
         handleEndOfGame();
-    }
-
-
-    //display values with innerText
-
-    //Remove "open-overlay" class to hide the pop up
-    modalOne.classList.remove("open-overlay");
-    //Display the score button
-    if (roundNumber < roundMax) {
+    } else {
         scoreContainer.style.display = "block";
     }
+
+    modalOne.classList.remove("open-overlay");
+
 
 }
