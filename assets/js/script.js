@@ -23,6 +23,11 @@ let computerScore = 0;
 let roundNumber = 0;
 const roundMax = 3;
 
+const finalContainer = document.querySelector(".final-container");
+const resultSpan = document.getElementById("result");
+const totalScoresUserSpan = document.getElementById("total-scores-user");
+const totalScoresComputerSpan = document.getElementById("total-scores-computer");
+
 startBtn.addEventListener("click", function () {
     nextBtn.style.display = "block";
     startBtn.style.display = "none";
@@ -106,11 +111,18 @@ for (var i = 0; i < choiceButtons.length; i++) {
     });
 }
 
-
+//Remove the loop that adds event listeners to choice buttons
 const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
 }
 
+
+//Determin the overall winner and update the result 
+function handleEndOfGame() {
+    if (userScore > computerScore) {
+
+    }
+}
 
 
 
