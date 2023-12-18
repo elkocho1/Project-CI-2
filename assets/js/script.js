@@ -29,11 +29,17 @@ const totalScoresUserSpan = document.getElementById("total-scores-user");
 const totalScoresComputerSpan = document.getElementById("total-scores-computer");
 
 startBtn.addEventListener("click", function () {
-    nextBtn.style.display = "block";
-    startBtn.style.display = "none";
-    displayGamePopUp();
-    updateRound();
-    replayGame();
+    //check if a new game should be started or next round
+    if (roundNumber === roundMax || roundNumber === 0) {
+        startNewGame();
+    } else {
+        //continue the current game
+        nextBtn.style.display = "block";
+        startBtn.style.display = "none"
+        displayGamePopUp();
+        updateRound();
+    }
+
 });
 nextBtn.addEventListener("click", function () {
     //   modalOne.classList.add("open-overlay");
@@ -141,11 +147,11 @@ function handleEndOfGame() {
 
 
 function replayGame() {
-    if (roundNumber === roundMax) {
-        userScore = 0;
-        computerScore = 0;
-        roundNumber = 0;
-    }
+
+    userScore = 0;
+    computerScore = 0;
+    roundNumber = 0;
+
     userScoreSpan.innerText = userScore;
     computerScoreSpan.innerText = computerScore;
     roundSpan.innerText = roundNumber;
@@ -154,6 +160,13 @@ function replayGame() {
     scoreContainer.style.display = "none";
 }
 
+
+function startNewGame() {
+    replayGame();
+    nextBtn.style.display = "block";
+    startBtn.style.display = "none";
+    displayGamePopUp();
+}
 
 
 /**
