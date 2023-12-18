@@ -106,7 +106,7 @@ function updateScores(winner) {
 
 //function to update round
 function updateRound() {
-    roundNumber++;
+
     roundSpan.innerText = roundNumber;
 }
 
@@ -201,7 +201,11 @@ function handleChoiceButtonClick(event) {
     //display winner in span element
     winnerSpan.innerText = winner;
 
+    roundNumber++;
+    updateRound()
+
     //display score and call the function;
+
     updateScores(winner);
 
     if (roundNumber === roundMax) {
