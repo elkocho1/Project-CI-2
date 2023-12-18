@@ -119,13 +119,15 @@ const displayGamePopUp = function () {
 
 //Determin the overall winner and update the result 
 function handleEndOfGame() {
+
+    console.log("handleEndOfGame called"); // test why the scoreContainer gets still displayed after the third round 
     if (userScore > computerScore) {
         resultSpan.innerText = "User Win!";
     } else if (computerScore > userScore) {
         resultSpan.innerText = "Computer Win!"
-    } else(
+    } else {
         resultSpan.innerText = "It's a Tie! "
-    )
+    }
 
     //Update the total scores
     totalScoresUserSpan.innerText = userScore;
