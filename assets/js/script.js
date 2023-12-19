@@ -1,5 +1,6 @@
-//select the start button and modal overlay
-//when user clicks start-btn add open-overlay to modal-overlay
+/**
+ * Global Variants
+ */
 
 const startBtn = document.querySelector(".start-btn");
 const modalOne = document.querySelector(".modal-overlay");
@@ -28,6 +29,8 @@ const resultSpan = document.getElementById("result");
 const totalScoresUserSpan = document.getElementById("total-scores-user");
 const totalScoresComputerSpan = document.getElementById("total-scores-computer");
 
+/**Start/Replay button function and click event*/
+
 startBtn.addEventListener("click", function () {
     //check if a new game should be started or next round
     if (roundNumber === roundMax || roundNumber === 0) {
@@ -40,6 +43,8 @@ startBtn.addEventListener("click", function () {
         updateRound();
     }
 
+    /**Next Round Button Function */
+
 });
 nextBtn.addEventListener("click", function () {
     //   modalOne.classList.add("open-overlay");
@@ -47,20 +52,17 @@ nextBtn.addEventListener("click", function () {
     updateRound();
 });
 
-//test logs
-//console.log("Choices array:", choices);
-//console.log("User Choice Span:", userChoiceSpan);
-//console.log("Computer Choice Span:", computerChoiceSpan);
 
-//Function to generate a random number for the computer´s choice
+
+/**Function to generate a random number for the computer´s choice*/
 function generateComputerChoice() {
     return Math.floor(Math.random() * choices.length);
 }
-//test the function console.log(generateComputerChoice());
-
-// Funtion Game Rules to determin the winner
-// If statements what hand beats the 2 hands
-//2 PLayers userChoice and ComputerChoices
+/** 
+ * Funtion Game Rules to determin the winner
+ * If statements what hand beats the 2 hands
+ * 2 PLayers userChoice and ComputerChoices
+ */
 
 
 function determineWinner(userChoice, computerChoices) {
@@ -91,7 +93,7 @@ function determineWinner(userChoice, computerChoices) {
 
 
 
-//function to update scores
+/**Function to update game scores */
 function updateScores(winner) {
     if (winner === "User wins!") {
         userScore++;
@@ -104,13 +106,12 @@ function updateScores(winner) {
 
 }
 
-//function to update round
+/**function to update round*/
 function updateRound() {
-
     roundSpan.innerText = roundNumber;
 }
 
-
+/**For loop for each choice button */
 for (var i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener("click", function (event) {
         //call the function when any choice button is clicked
@@ -118,13 +119,13 @@ for (var i = 0; i < choiceButtons.length; i++) {
     });
 }
 
-//Remove the loop that adds event listeners to choice buttons
+
 const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
 }
 
+/** Determin the overall winner and update the result */
 
-//Determin the overall winner and update the result 
 function handleEndOfGame() {
 
     console.log("handleEndOfGame called"); // test why the scoreContainer gets still displayed after the third round 
@@ -181,30 +182,19 @@ function startNewGame() {
 
 function handleChoiceButtonClick(event) {
 
-    //get the innerText of the clicked users choice
-    //add event paramenter to main function and loop 
-    //create variable userChoice and add the event.target.innerText
     const userChoice = event.target.innerText;
-    //console.log("userChoice");
-    //display the new variable 
     userChoiceSpan.innerText = userChoice;
-    //get computer´s choice by random number 
+
     const randomNumber = generateComputerChoice();
     const computerChoices = choices[randomNumber];
-    //console.log("computerChoices");
-    //display in score container
     computerChoiceSpan.innerText = computerChoices;
 
-    // call the determin winner function
+
     const winner = determineWinner(userChoice, computerChoices);
-    // console.log("winner of the round:", winner);
-    //display winner in span element
     winnerSpan.innerText = winner;
 
     roundNumber++;
     updateRound();
-
-    //display score and call the function;
 
     updateScores(winner);
 
@@ -212,7 +202,6 @@ function handleChoiceButtonClick(event) {
         nextBtn.style.display = "none";
         startBtn.style.display = "block";
 
-        //call the handleEndOfGame function under this condition
         handleEndOfGame();
     }
 
