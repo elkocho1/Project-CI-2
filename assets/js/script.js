@@ -29,6 +29,8 @@ const resultSpan = document.getElementById("result");
 const totalScoresUserSpan = document.getElementById("total-scores-user");
 const totalScoresComputerSpan = document.getElementById("total-scores-computer");
 
+scoreContainer.style.display = "none";
+
 /**Start/Replay button function and click event*/
 
 startBtn.addEventListener("click", function () {
