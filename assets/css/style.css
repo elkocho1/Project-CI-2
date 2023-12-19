@@ -100,13 +100,22 @@ button:hover {
 }
 
 .btn-choices button {
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.0);
     position: relative;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #ff7f60;
+    border: 1px solid #ff7f60;
+    font-size: medium;
+    transition: background-color 0.3s ease;
+}
+
+.btn-choices button:hover {
+    background-color: #ff6347;
+    color: #Fff;
 }
 
 .btn-choices button img {
