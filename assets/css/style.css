@@ -101,8 +101,20 @@ button:hover {
 
 .btn-choices button {
     background-color: green;
-
+    position: relative;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.btn-choices button img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
 
 /*Score Container*/
 .score-container {
