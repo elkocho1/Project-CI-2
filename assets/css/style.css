@@ -74,21 +74,34 @@ button:hover {
 .modal-container {
     background-color: #f4f4f4;
     width: 80%;
-    max-width: 500px;
     margin: 10% auto;
     padding: 20px;
     border-radius: 10px;
 }
 
 .modal-container h2,
+.modal-container p {
+    text-align: center;
+}
+
+
+.modal-container h2,
 .score-container h2 {
-    color: blue;
+    color: #ff7f60;
+    text-transform: uppercase;
+    font-size: 200%;
 }
 
 /*Button Choices*/
+.btn-choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-choices button {
     background-color: green;
-    min-width: 80%;
+
 }
 
 /*Score Container*/
