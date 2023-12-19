@@ -23,6 +23,10 @@ header.hero h1 {
     font-size: 2.5rem;
 }
 
+#round-msg {
+    display: none;
+}
+
 button {
     background-color: #ff7f60;
     color: #Fff;

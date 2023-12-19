@@ -32,12 +32,16 @@ const totalScoresComputerSpan = document.getElementById("total-scores-computer")
 /**Start/Replay button function and click event*/
 
 startBtn.addEventListener("click", function () {
+    document.getElementById("intro-msg").style.display = "none";
+    document.getElementById("round-msg").style.display = "block";
     //check if a new game should be started or next round
     if (roundNumber === roundMax || roundNumber === 0) {
         startNewGame();
+
     } else {
         //continue the current game
         nextBtn.style.display = "block";
+
         startBtn.style.display = "none"
         displayGamePopUp();
         updateRound();
@@ -47,7 +51,9 @@ startBtn.addEventListener("click", function () {
 
 });
 nextBtn.addEventListener("click", function () {
+    document.getElementById("round-msg").style.display = "block";
     //   modalOne.classList.add("open-overlay");
+
     displayGamePopUp();
     updateRound();
 });
