@@ -202,7 +202,7 @@ function handleChoiceButtonClick(event) {
     winnerSpan.innerText = winner;
 
     roundNumber++;
-    updateRound()
+    updateRound();
 
     //display score and call the function;
 
@@ -214,9 +214,9 @@ function handleChoiceButtonClick(event) {
 
         //call the handleEndOfGame function under this condition
         handleEndOfGame();
-    } else {
-        scoreContainer.style.display = "block";
     }
+
+    scoreContainer.style.display = "block";
 
     modalOne.classList.remove("open-overlay");
 
