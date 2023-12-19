@@ -160,10 +160,46 @@ button:hover {
 .score-count {
     font-size: 2rem;
     border: 2px solid #000;
-    padding: 10px;
+    padding: 30px;
     margin: 10px auto;
     display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.score-count {
+    margin-bottom: 30px;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+}
+
+.score h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.choices .user-choice,
+.choices .computer-choice {
+    width: 100px;
+    text-align: center;
+}
+
+.next-round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 /*Winner and Final Container*/
 .final-container {
