@@ -215,11 +215,13 @@ function getImagePathForChoice(choice) {
 function handleChoiceButtonClick(event) {
 
     const userChoice = event.target.innerText;
-    userChoiceSpan.innerText = userChoice;
+    const userChoiceImagePath = getImagePathForChoice(userChoice);
+    userChoiceSpan.innerHTML = `<img src="${userChoiceImagePath}" alt="${userChoice}"> ${userChoice}`;
 
     const randomNumber = generateComputerChoice();
     const computerChoices = choices[randomNumber];
-    computerChoiceSpan.innerText = computerChoices;
+    const computerChoiceImagePath = getImagePathForChoice(computerChoices)
+    computerChoiceSpan.innerHTML = `<img src="${computerChoiceImagePath}" alt="${computerChoices}"> ${computerChoices}`;
 
 
     const winner = determineWinner(userChoice, computerChoices);
