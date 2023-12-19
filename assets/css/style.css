@@ -24,17 +24,24 @@ header.hero h1 {
 }
 
 button {
-    background-color: green;
+    background-color: #ff7f60;
     color: white;
     border: none;
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #218829;
+    background-color: #ff6347;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Pop Up / Modal */
