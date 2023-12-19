@@ -177,6 +177,30 @@ function startNewGame() {
     displayGamePopUp();
 }
 
+function getImagePathForChoice(choice) {
+    let imagePath = '';
+    switch (choice.toLowerCase()) {
+        case 'rock':
+            imagePath = 'assets/images/rock-preview.png';
+            break;
+        case 'paper':
+            imagePath = 'assets/images/paper-preview.png';
+            break;
+        case 'scissors':
+            imagePath = 'assets/images/scissors-preview.png';
+            break;
+        case 'lizard':
+            imagePath = 'assets/images/lizard-preview.png';
+            break;
+        case 'spock':
+            imagePath = 'assets/images/spock-preview.png';
+            break;
+        default:
+            imagePath = 'assets/images/default.png';
+    }
+    return imagePath;
+}
+
 
 /**
  * function to handle choice button click event
