@@ -135,6 +135,7 @@ button:hover {
     justify-content: center;
     text-align: center;
     padding: 20px;
+
 }
 
 .score-board {
@@ -145,6 +146,7 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     margin: auto;
+    box-sizing: border-box;
 }
 
 .round-info,
@@ -237,9 +239,19 @@ button.replay {
 /*Responsiveness*/
 
 @media screen and (max-width:768px) {
+
+    /*header*/
     header.hero h1 {
         font-size: 2rem;
     }
+
+    button {
+        padding: 15px 30px;
+        font-size: medium;
+        margin: 8px;
+    }
+
+    /*Pop Up*/
 
     .button-container button,
     .btn-choices button {
@@ -270,24 +282,55 @@ button.replay {
         padding: 20px;
     }
 
+    /*score container*/
+    .score-container {
+        padding: 10px;
+    }
 
     .score-board {
-        width: 95%;
-        margin: 5% auto;
+        width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 10px;
     }
+
+    .round-info,
+    .scores,
+    .schoices,
+    .next-round {
+        margin: 10px 0;
+    }
+
+    .round-count,
+    .score-count {
+        font-size: 1.5rem;
+        padding: 20px;
+        margin: 5px auto;
+    }
+
+    .score h3,
+    .round-info h2,
+    .winner-info h2 {
+        font-size: 1rem;
+    }
+
 
     .choices {
         flex-direction: column;
-        padding: 0 10px;
+
     }
 
     .choices .user-choice,
     .choices .computer-choice {
         width: auto;
+        margin: 5px auto;
+    }
+
+    .choice-img {
+        width: 50px;
+        height: auto;
     }
 
 
-    .score-container {
-        padding: 10px;
-    }
+
 }
