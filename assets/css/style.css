@@ -136,8 +136,9 @@ button:hover {
 
 .score-board {
     padding: 20px;
-    border-radius: 10px;
-    background-color: #f4f4f4;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    background: linear-gradient(to right, #fff, #e6e6e6);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     margin: auto;
@@ -168,11 +169,16 @@ button:hover {
 
 .score-count {
     margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff7f60;
 }
 
 .scores {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 0;
 }
 
 .score h3 {
@@ -203,6 +209,11 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.next-round button:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
 }
 
 
