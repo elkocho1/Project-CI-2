@@ -72,7 +72,7 @@ button:hover {
 /*Modal Container*/
 
 .modal-container {
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #fff, #e6e6e6);
     width: 80%;
     margin: 10% auto;
     padding: 20px;
@@ -224,11 +224,45 @@ button:hover {
 
 
 /*Winner and Final Container*/
+#total-scores-computer,
+#total-scores-user,
+#result {
+    color: #ff6347;
+    font-size: larger;
+}
+
 .final-container {
     text-align: center;
     padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    background: linear-gradient(to right, #fff, #e6e6e6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
+    box-sizing: border-box;
+    margin-bottom: 20px;
     display: none;
     /*hidden by default*/
+}
+
+.final-container h2 {
+    color: #ff7f60;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.final-container p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.final-container .results {
+    font-weight: bold;
+}
+
+.final-container .total-score {
+    margin-top: 15px;
 }
 
 /*Replay button*/
@@ -252,6 +286,12 @@ button.replay {
     }
 
     /*Pop Up*/
+    .modal-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
 
     .button-container button,
     .btn-choices button {
@@ -276,11 +316,6 @@ button.replay {
         height: 25px;
     }
 
-    .modal-container {
-        width: 95%;
-        margin: 20px auto;
-        padding: 20px;
-    }
 
     /*score container*/
     .score-container {
@@ -349,6 +384,24 @@ button.replay {
         width: 40px;
         height: auto;
         margin: 5px;
+    }
+
+
+    /*Final Container*/
+
+    .final-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .final-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .final-container p {
+        font-size: 1rem;
     }
 
 
