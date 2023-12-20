@@ -196,7 +196,8 @@ function getImagePathForChoice(choice) {
             imagePath = 'assets/images/spock-preview.png';
             break;
         default:
-            imagePath = 'assets/images/default.png';
+            console.error("failed to load image for choice:", choice);
+            imagePath = 'assets/images/default.jpg';
     }
     return imagePath;
 }
