@@ -77,6 +77,9 @@ button:hover {
     margin: 10% auto;
     padding: 20px;
     border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+
 }
 
 .modal-container h2,
@@ -229,4 +232,62 @@ button:hover {
 /*Replay button*/
 button.replay {
     background-color: green;
+}
+
+/*Responsiveness*/
+
+@media screen and (max-width:768px) {
+    header.hero h1 {
+        font-size: 2rem;
+    }
+
+    .button-container button,
+    .btn-choices button {
+        padding: 15px 30px;
+        font-size: medium;
+    }
+
+    .btn-choices {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .btn-choices button {
+        flex-basis: 45%;
+        margin: 5px;
+        padding: 10px 0;
+    }
+
+    .btn-choices button img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .modal-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+
+    .score-board {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .choices {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .choices .user-choice,
+    .choices .computer-choice {
+        width: auto;
+    }
+
+
+    .score-container {
+        padding: 10px;
+    }
 }
