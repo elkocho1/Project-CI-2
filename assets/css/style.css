@@ -317,18 +317,38 @@ button.replay {
 
     .choices {
         flex-direction: column;
+    }
+
+    .winner-info,
+    .user-choice,
+    .computer-choice {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .user-choice,
+    .computer-choice {
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
     }
 
-    .choices .user-choice,
-    .choices .computer-choice {
-        width: auto;
-        margin: 5px auto;
+    .winner-info p,
+    .user-choice p,
+    .computer-choice p {
+        margin: 5px 0;
+        font-size: 1rem;
     }
+
 
     .choice-img {
-        width: 50px;
+        width: 40px;
         height: auto;
+        margin: 5px;
     }
 
 
