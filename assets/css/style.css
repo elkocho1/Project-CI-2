@@ -354,6 +354,14 @@ button.replay {
         flex-direction: column;
     }
 
+
+    .choices span {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .winner-info,
     .user-choice,
     .computer-choice {
