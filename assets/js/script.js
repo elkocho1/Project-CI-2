@@ -46,7 +46,7 @@ startBtn.addEventListener("click", function () {
         //continue the current game
         nextBtn.style.display = "block";
 
-        startBtn.style.display = "none"
+        startBtn.style.display = "none";
         displayGamePopUp();
         updateRound();
     }
@@ -146,7 +146,7 @@ for (let i = 0; i < choiceButtons.length; i++) {
 
 const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
-}
+};
 
 /**
  * Determin the overall winner and update the result 
@@ -158,9 +158,9 @@ function handleEndOfGame() {
     if (userScore > computerScore) {
         resultSpan.innerText = "User Win!";
     } else if (computerScore > userScore) {
-        resultSpan.innerText = "Computer Win!"
+        resultSpan.innerText = "Computer Win!";
     } else {
-        resultSpan.innerText = "It's a Tie! "
+        resultSpan.innerText = "It's a Tie! ";
     }
 
     //Update the total scores
@@ -241,7 +241,7 @@ function handleChoiceButtonClick(event) {
 
     const randomNumber = generateComputerChoice();
     let computerChoices = choices[randomNumber];
-    let computerChoiceImagePath = getImagePathForChoice(computerChoices)
+    let computerChoiceImagePath = getImagePathForChoice(computerChoices);
     console.log("computer choice:", computerChoices);
     computerChoiceSpan.innerHTML = `<img src="${computerChoiceImagePath}" alt="${computerChoices}" class="choice-img"> ${computerChoices}`;
 
