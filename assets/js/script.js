@@ -31,7 +31,9 @@ const totalScoresComputerSpan = document.getElementById("total-scores-computer")
 
 scoreContainer.style.display = "none";
 
-/**Start/Replay button function and click event*/
+/**
+ * Start/Replay button function and click event
+ * */
 
 startBtn.addEventListener("click", function () {
     document.getElementById("intro-msg").style.display = "none";
@@ -49,7 +51,9 @@ startBtn.addEventListener("click", function () {
         updateRound();
     }
 
-    /**Next Round Button Function */
+    /**
+     * Next Round Button Function
+     *  */
 
 });
 nextBtn.addEventListener("click", function () {
@@ -62,7 +66,9 @@ nextBtn.addEventListener("click", function () {
 
 
 
-/**Function to generate a random number for the computer´s choice*/
+/**
+ * Function to generate a random number for the computer´s choice
+ * */
 function generateComputerChoice() {
     return Math.floor(Math.random() * choices.length);
 }
@@ -101,7 +107,9 @@ function determineWinner(userChoice, computerChoices) {
 
 
 
-/**Function to update game scores */
+/**
+ * Function to update game scores 
+ * */
 function updateScores(winner) {
     if (winner === "User wins!") {
         userScore++;
@@ -114,12 +122,16 @@ function updateScores(winner) {
 
 }
 
-/**function to update round*/
+/**
+ * function to update round
+ * */
 function updateRound() {
     roundSpan.innerText = roundNumber;
 }
 
-/**For loop for each choice button */
+/**
+ * For loop for each choice button 
+ * */
 for (let i = 0; i < choiceButtons.length; i++) {
     console.log(choiceButtons[i]);
     choiceButtons[i].addEventListener("click", function (event) {
@@ -136,7 +148,9 @@ const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
 }
 
-/** Determin the overall winner and update the result */
+/**
+ * Determin the overall winner and update the result 
+ * */
 
 function handleEndOfGame() {
 
