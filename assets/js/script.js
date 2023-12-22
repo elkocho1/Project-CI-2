@@ -120,10 +120,12 @@ function updateRound() {
 }
 
 /**For loop for each choice button */
-for (var i = 0; i < choiceButtons.length; i++) {
+for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener("click", function (event) {
         //call the function when any choice button is clicked
         handleChoiceButtonClick(event);
+        console.log(choiceButtons[i]);
+        console.log(choiceButtons[i].innerText);
     });
 }
 
@@ -178,6 +180,7 @@ function startNewGame() {
 }
 
 function getImagePathForChoice(choice) {
+    console.log(choice);
     let imagePath = '';
     switch (choice.toLowerCase()) {
         case 'rock':
@@ -196,7 +199,7 @@ function getImagePathForChoice(choice) {
             imagePath = 'assets/images/spock-preview.png';
             break;
         default:
-            console.error("failed to load image for choice:", choice);
+
             imagePath = 'assets/images/default.jpg';
     }
     return imagePath;
@@ -215,13 +218,15 @@ function getImagePathForChoice(choice) {
 
 function handleChoiceButtonClick(event) {
 
-    const userChoice = event.target.innerText;
+    let userChoice = event.target.innerText;
+    console.log("user choice:", userChoice);
     const userChoiceImagePath = getImagePathForChoice(userChoice);
     userChoiceSpan.innerHTML = `<img src="${userChoiceImagePath}" alt="${userChoice}" class="choice-img"> ${userChoice}`;
 
     const randomNumber = generateComputerChoice();
-    const computerChoices = choices[randomNumber];
-    const computerChoiceImagePath = getImagePathForChoice(computerChoices)
+    let computerChoices = choices[randomNumber];
+    let computerChoiceImagePath = getImagePathForChoice(computerChoices)
+    console.log("computer choice:", computerChoices);
     computerChoiceSpan.innerHTML = `<img src="${computerChoiceImagePath}" alt="${computerChoices}" class="choice-img"> ${computerChoices}`;
 
 
