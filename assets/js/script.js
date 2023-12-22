@@ -121,11 +121,13 @@ function updateRound() {
 
 /**For loop for each choice button */
 for (let i = 0; i < choiceButtons.length; i++) {
+    console.log(choiceButtons[i]);
     choiceButtons[i].addEventListener("click", function (event) {
         //call the function when any choice button is clicked
-        handleChoiceButtonClick(event);
+        console.log("choice button clicked");
+        console.log(choiceButtons[i].dataset.choice);
         console.log(choiceButtons[i]);
-        console.log(choiceButtons[i].innerText);
+        handleChoiceButtonClick(event);
     });
 }
 
