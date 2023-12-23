@@ -237,13 +237,13 @@ function handleChoiceButtonClick(usersCurrentChoice) {
     let userChoice = usersCurrentChoice;
     console.log("user choice:", userChoice);
     const userChoiceImagePath = getImagePathForChoice(userChoice);
-    userChoiceSpan.innerHTML = `<img src="${userChoiceImagePath}" alt="${userChoice}" class="choice-img"> ${userChoice}`;
+    userChoiceSpan.innerHTML = `<img src="${userChoiceImagePath}" alt="${userChoice}" class="choice-img"> ${userChoice.toUpperCase()}`;
 
     const randomNumber = generateComputerChoice();
     let computerChoices = choices[randomNumber];
     let computerChoiceImagePath = getImagePathForChoice(computerChoices);
     console.log("computer choice:", computerChoices);
-    computerChoiceSpan.innerHTML = `<img src="${computerChoiceImagePath}" alt="${computerChoices}" class="choice-img"> ${computerChoices}`;
+    computerChoiceSpan.innerHTML = `<img src="${computerChoiceImagePath}" alt="${computerChoices}" class="choice-img"> ${computerChoices.toUpperCase()}`;
 
 
     const winner = determineWinner(userChoice, computerChoices);
