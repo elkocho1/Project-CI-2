@@ -44,17 +44,20 @@ button {
 }
 
 
-button:hover {
-    background-color: #ff6347;
-}
-
-
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.btn {
+    background-color: red;
+}
+
+.btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+}
 
 /* Pop Up / Modal */
 .modal-overlay {
@@ -234,6 +237,10 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.next-round button {
+    background-color: red;
 }
 
 
