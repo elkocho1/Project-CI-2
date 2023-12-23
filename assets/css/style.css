@@ -1,8 +1,11 @@
-/*Genreal Body Style*/
-body {
-    font-family: Arial, Helvetica, sans-serif;
+/*Global Settings*/
+* {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to right, #314755, #26a0da) no-repeat;
     min-height: 100vh;
 }
