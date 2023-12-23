@@ -139,7 +139,7 @@ for (let i = 0; i < choiceButtons.length; i++) {
         console.log("choice button clicked");
         console.log(choiceButtons[i].dataset.choice);
         console.log(choiceButtons[i]);
-        handleChoiceButtonClick(event);
+        handleChoiceButtonClick(choiceButtons[i].dataset.choice);
     });
 }
 
@@ -232,9 +232,9 @@ function getImagePathForChoice(choice) {
  * For Loop with click event listener 
  */
 
-function handleChoiceButtonClick(event) {
+function handleChoiceButtonClick(usersCurrentChoice) {
 
-    let userChoice = event.target.innerText;
+    let userChoice = usersCurrentChoice;
     console.log("user choice:", userChoice);
     const userChoiceImagePath = getImagePathForChoice(userChoice);
     userChoiceSpan.innerHTML = `<img src="${userChoiceImagePath}" alt="${userChoice}" class="choice-img"> ${userChoice}`;
