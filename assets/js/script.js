@@ -33,7 +33,7 @@ scoreContainer.style.display = "none";
 
 /**
  * Start/Replay button function and click event
- * */
+ */
 
 startBtn.addEventListener("click", function () {
     document.getElementById("intro-msg").style.display = "none";
@@ -41,44 +41,39 @@ startBtn.addEventListener("click", function () {
     //check if a new game should be started or next round
     if (roundNumber === roundMax || roundNumber === 0) {
         startNewGame();
-
     } else {
         //continue the current game
         nextBtn.style.display = "block";
-
         startBtn.style.display = "none";
         displayGamePopUp();
         updateRound();
     }
-
-    /**
-     * Next Round Button Function
-     *  */
-
 });
+
+/**
+ * Next Round Button Function
+ */
 nextBtn.addEventListener("click", function () {
     document.getElementById("round-msg").style.display = "block";
-    //   modalOne.classList.add("open-overlay");
-
+    //modalOne.classList.add("open-overlay");
     displayGamePopUp();
     updateRound();
 });
 
 
-
 /**
  * Function to generate a random number for the computer´s choice
- * */
+ */
 function generateComputerChoice() {
     return Math.floor(Math.random() * choices.length);
 }
+
+
 /** 
  * Funtion Game Rules to determin the winner
  * If statements what hand beats the 2 hands
  * 2 PLayers userChoice and ComputerChoices
  */
-
-
 function determineWinner(userChoice, computerChoices) {
     if (userChoice === computerChoices) {
         return "It´s a tie!";
@@ -86,7 +81,6 @@ function determineWinner(userChoice, computerChoices) {
     }
     if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
         return "User wins!";
-
     } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
         return "User wins!";
         //  console.log("User");
@@ -102,14 +96,12 @@ function determineWinner(userChoice, computerChoices) {
     }
     return "Computer wins!";
     // console.log("Computer");
-
 }
-
 
 
 /**
  * Function to update game scores 
- * */
+ */
 function updateScores(winner) {
     if (winner === "User wins!") {
         userScore++;
@@ -119,19 +111,20 @@ function updateScores(winner) {
     //display user score & computer score
     userScoreSpan.innerText = userScore;
     computerScoreSpan.innerText = computerScore;
-
 }
 
+
 /**
- * function to update round
- * */
+ * Function to update round
+ */
 function updateRound() {
     roundSpan.innerText = roundNumber;
 }
 
+
 /**
  * For loop for each choice button 
- * */
+ */
 for (let i = 0; i < choiceButtons.length; i++) {
     console.log(choiceButtons[i]);
     choiceButtons[i].addEventListener("click", function (event) {
@@ -144,16 +137,18 @@ for (let i = 0; i < choiceButtons.length; i++) {
 }
 
 
+/**
+ * Display the Pop Up with the choices
+ */
 const displayGamePopUp = function () {
     modalOne.classList.add("open-overlay");
 };
 
+
 /**
  * Determin the overall winner and update the result 
- * */
-
+ */
 function handleEndOfGame() {
-
     console.log("handleEndOfGame called"); // test why the scoreContainer gets still displayed after the third round 
     if (userScore > computerScore) {
         resultSpan.innerText = "User Win!";
@@ -162,32 +157,33 @@ function handleEndOfGame() {
     } else {
         resultSpan.innerText = "It's a Tie! ";
     }
-
     //Update the total scores
     totalScoresUserSpan.innerText = userScore;
     totalScoresComputerSpan.innerText = computerScore;
-
     //hide score ontainer and show final container
     scoreContainer.style.display = "none";
     finalContainer.style.display = "block";
 }
 
 
+/**
+ * Function to reset the scores and rounds
+ */
 function replayGame() {
-
     userScore = 0;
     computerScore = 0;
     roundNumber = 0;
-
     userScoreSpan.innerText = userScore;
     computerScoreSpan.innerText = computerScore;
     roundSpan.innerText = roundNumber;
-
     finalContainer.style.display = "none";
     scoreContainer.style.display = "none";
 }
 
 
+/**
+ * Function to start a new game
+ */
 function startNewGame() {
     replayGame();
     nextBtn.style.display = "block";
@@ -195,6 +191,10 @@ function startNewGame() {
     displayGamePopUp();
 }
 
+
+/**
+ * Assign the image Path the the choices
+ */
 function getImagePathForChoice(choice) {
     console.log(choice);
     let imagePath = '';
@@ -215,7 +215,6 @@ function getImagePathForChoice(choice) {
             imagePath = 'assets/images/spock-preview.png';
             break;
         default:
-
             imagePath = 'assets/images/default.jpg';
     }
     return imagePath;
@@ -233,37 +232,31 @@ function getImagePathForChoice(choice) {
  */
 
 function handleChoiceButtonClick(usersCurrentChoice) {
-
+    //display user Choice with image after the click event in the score container
     let userChoice = usersCurrentChoice;
     console.log("user choice:", userChoice);
     const userChoiceImagePath = getImagePathForChoice(userChoice);
     userChoiceSpan.innerHTML = `<img src="${userChoiceImagePath}" alt="${userChoice}" class="choice-img"> ${userChoice.toUpperCase()}`;
-
+    //display the computer Choice with image after the click event in the score container
     const randomNumber = generateComputerChoice();
     let computerChoices = choices[randomNumber];
     let computerChoiceImagePath = getImagePathForChoice(computerChoices);
     console.log("computer choice:", computerChoices);
     computerChoiceSpan.innerHTML = `<img src="${computerChoiceImagePath}" alt="${computerChoices}" class="choice-img"> ${computerChoices.toUpperCase()}`;
-
-
+    //display the winner in the score container
     const winner = determineWinner(userChoice, computerChoices);
     winnerSpan.innerText = winner;
-
+    //call the updateRound function and increase it
     roundNumber++;
     updateRound();
-
+    //call the updateScores function
     updateScores(winner);
 
     if (roundNumber === roundMax) {
         nextBtn.style.display = "none";
         startBtn.style.display = "block";
-
         handleEndOfGame();
     }
-
     scoreContainer.style.display = "block";
-
     modalOne.classList.remove("open-overlay");
-
-
 }
