@@ -22,6 +22,12 @@ header.hero {
 header.hero h1 {
     margin: 0;
     font-size: 2.5rem;
+    padding-bottom: 10px;
+}
+
+
+header.hero p {
+    padding-bottom: 10px;
 }
 
 
@@ -91,6 +97,7 @@ button:hover {
 .modal-container h2,
 .modal-container p {
     text-align: center;
+    padding: 10px;
 }
 
 
@@ -302,8 +309,13 @@ button:hover {
     /*header*/
     header.hero h1 {
         font-size: 2rem;
+        padding: 10px;
     }
 
+    header.hero p {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
     button {
         padding: 15px 30px;
@@ -435,7 +447,7 @@ button:hover {
     .final-container {
         width: 90%;
         margin: 20px auto;
-        padding: 10px;
+        padding: 20px;
         border-radius: 10px;
     }
 
