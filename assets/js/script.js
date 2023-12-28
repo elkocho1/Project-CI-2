@@ -76,30 +76,34 @@ function generateComputerChoice() {
  * If statements what hand beats the 2 hands
  * 2 PLayers userChoice and ComputerChoices
  */
+
+
 function determineWinner(userChoice, computerChoices) {
+    userChoice = userChoice.toLowerCase();
+
+
     if (userChoice === computerChoices) {
         return "It´s a tie!";
         //  console.log("tie");
     }
-    if (userChoice === 'Rock' && (computerChoices === 'Scissors' || computerChoices === 'Lizard')) {
+    if (userChoice === 'rock' && (computerChoices === 'scissors' || computerChoices === 'lizard')) {
         return "User wins!";
-    } else if (userChoice === 'Paper' && (computerChoices === 'Rock' || computerChoices === 'Spock')) {
+    } else if (userChoice === 'paper' && (computerChoices === 'rock' || computerChoices === 'spock')) {
         return "User wins!";
         //  console.log("User");
-    } else if (userChoice === 'Scissors' && (computerChoices === 'Paper' || computerChoices === 'Lizard')) {
+    } else if (userChoice === 'scissors' && (computerChoices === 'paper' || computerChoices === 'lizard')) {
         return "User wins!";
         //   console.log("User");
-    } else if (userChoice === 'Lizard' && (computerChoices === 'Spock' || computerChoices === 'Paper')) {
+    } else if (userChoice === 'lizard' && (computerChoices === 'spock' || computerChoices === 'paper')) {
         return "User wins!";
         // console.log("User");
-    } else if (userChoice === 'Spock' && (computerChoices === 'Scissors' || computerChoices === 'Rock')) {
+    } else if (userChoice === 'spock' && (computerChoices === 'scissors' || computerChoices === 'rock')) {
         return "User wins!";
         // console.log("User");
     }
     return "Computer wins!";
     // console.log("Computer");
 }
-
 
 /**
  * Function to update game scores 
@@ -244,6 +248,7 @@ function handleChoiceButtonClick(usersCurrentChoice) {
     //display the computer Choice with image after the click event in the score container
     const randomNumber = generateComputerChoice();
     let computerChoices = choices[randomNumber];
+    computerChoices = computerChoices.toLowerCase();
     let computerChoiceImagePath = getImagePathForChoice(computerChoices);
     console.log("computer choice:", computerChoices);
     computerChoiceSpan.innerHTML =
